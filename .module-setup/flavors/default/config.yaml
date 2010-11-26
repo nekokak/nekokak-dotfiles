@@ -1,0 +1,9 @@
+---
+author: Atsushi Kobayashi
+class: Module::Setup::Flavor::Default
+email: nekokak _at_ gmail _dot_ com
+plugins:
+  - Config::Basic
+  - Template
+  - Test::Makefile
+  - Additional

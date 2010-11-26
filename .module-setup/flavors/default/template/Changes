@@ -1,0 +1,6 @@
+Revision history for Perl extension [% module %]
+
+0.01
+   [% localtime %]
+        - initial release.
+
