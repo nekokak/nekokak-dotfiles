@@ -1,0 +1,57 @@
+# =========================================================================
+# GNU Screen
+#
+# =========================================================================
+escape ^Ta
+vbell off
+autodetach on
+
+defhstatus screen@$HOSTNAME
+msgminwait 0
+
+defutf8 on
+defencoding utf-8
+encoding utf-8 utf-8
+
+termcapinfo xterm 'hs:ts=\E]0;:fs=\007:ds=\E]0;screen\007'
+termcapinfo kterm 'hs:ts=\E]0;:fs=\007:ds=\E]0;screen\007'
+
+termcapinfo  xterm* LP:hs
+termcapinfo  kterm* LP:G0:hs
+
+startup_message off
+markkeys h=^B:l=^F:$=^E:^U=^Z:^D=^V
+hardstatus alwayslastline "[%02c] %`%-w%{=b bw}%n %t%{-}%+w"
+
+termcap  kterm 'AF=\E[3%dm:AB=\E[4%dm'
+terminfo kterm 'AF=\E[3%p1%dm:AB=\E[4%p1%dm'
+
+bind -c REGION 2 split
+bind -c REGION 1 only
+bind -c REGION 0 remove
+bind -c REGION o focus
+bind -c REGION \^ resize
+bind -c REGION ^n focus
+bind ^x command -c REGION
+
+defbce "on"
+#term xterm-256color
+attrcolor b ".I"
+
+# -------------------------------------------------------------------------
+# multi user
+#
+# -------------------------------------------------------------------------
+#multiuser on
+
+screen -t 'main0' 0
+screen -t 'main1' 1
+screen -t 'main2' 2
+screen -t 'main3' 3
+screen -t 'main4' 4
+screen -t 'main5' 5
+screen -t 'main6' 6
+screen -t 'main7' 7
+screen -t 'main8' 8
+screen -t 'main9' 9
+
